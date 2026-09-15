@@ -162,12 +162,12 @@ export default defineConfig({
     },
   },
   envDir: path.resolve(import.meta.dirname),
-  root: path.resolve(import.meta.dirname, "client"),
+ root: path.resolve(import.meta.dirname, "client"),
   publicDir: path.resolve(import.meta.dirname, "client", "public"),
-  build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
-    emptyOutDir: true,
-  },
+build: {
+  outDir: path.resolve(import.meta.dirname, "dist"), // Mudado de "dist/public" para "dist"
+  emptyOutDir: true,
+},
   server: {
     host: true,
     allowedHosts: [
