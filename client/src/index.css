@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.8rem;
+  --background: #f6f8f8;
+  --foreground: #263a44;
+  --card: #ffffff;
+  --card-foreground: #263a44;
+  --popover: #ffffff;
+  --popover-foreground: #263a44;
+  --primary: #193d4c;
+  --primary-foreground: #f8fbfb;
+  --secondary: #e8f4f3;
+  --secondary-foreground: #167782;
+  --muted: #eef2f2;
+  --muted-foreground: #7d8c92;
+  --accent: #e8f4f3;
+  --accent-foreground: #167782;
+  --destructive: #ba5845;
+  --destructive-foreground: #ffffff;
+  --border: #dfe7e8;
+  --input: #dfe7e8;
+  --ring: #70afb2;
+}
+
+.dark {
+  --background: #15242b;
+  --foreground: #edf5f4;
+  --card: #1d313a;
+  --card-foreground: #edf5f4;
+  --popover: #1d313a;
+  --popover-foreground: #edf5f4;
+  --primary: #d99e2c;
+  --primary-foreground: #1e2f36;
+  --secondary: #23434d;
+  --secondary-foreground: #c7e4e2;
+  --muted: #21363f;
+  --muted-foreground: #9ab0b4;
+  --accent: #23434d;
+  --accent-foreground: #c7e4e2;
+  --destructive: #e57b65;
+  --destructive-foreground: #fffaf8;
+  --border: #34505a;
+  --input: #34505a;
+  --ring: #82c3c1;
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  body { @apply bg-background text-foreground; margin: 0; }
+  button, a, input, select, textarea { font: inherit; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), a[href], select:not(:disabled), input:not(:disabled) { cursor: pointer; }
+  button:focus-visible, input:focus-visible { outline: 2px solid #70afb2; outline-offset: 2px; }
+}
+
+@layer utilities {
+  .font-display { font-family: "Space Grotesk", "DM Sans", ui-sans-serif, system-ui, sans-serif; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button, a, input { transition: color 180ms cubic-bezier(.23,1,.32,1), background-color 180ms cubic-bezier(.23,1,.32,1), border-color 180ms cubic-bezier(.23,1,.32,1), transform 160ms cubic-bezier(.23,1,.32,1); }
+}
